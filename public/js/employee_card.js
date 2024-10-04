@@ -26,6 +26,7 @@ export class EmployeeCard extends HTMLElement {
         this.email = employee.email;
         this.phone = employee.phone;
         this.department_id = employee.department_id;
+        this.department_label = employee.department_label;
         this.img = employee.img;
         this.id = employee.id;
  
@@ -90,7 +91,7 @@ export class EmployeeCard extends HTMLElement {
                 <h1 class='name'>${this.name}</h1>
                 <p class='email'>Email: ${this.email}</p>
                 <p class='phone'>Phone number: ${this.phone}</p>
-                <p class='department_id'>Department ID: ${this.department_id}</p>
+                <p class='department_id'>Department: ${this.department_label}</p>
              </div>
              <div>
                 <button id="edit-button">Edit</button>

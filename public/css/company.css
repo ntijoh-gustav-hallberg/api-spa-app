@@ -20,7 +20,6 @@ body {
 }
 
 /* form */
-
 .toggleble-form {
     display: none;
     overflow: hidden;
@@ -71,7 +70,6 @@ body {
 }
 
 /* nav */
-
 nav {
     padding: 5px 0 5px 0;
     width: 100%;
