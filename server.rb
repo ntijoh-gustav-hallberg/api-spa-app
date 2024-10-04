@@ -37,7 +37,7 @@ class Server < Sinatra::Base
     #index
     get '/api/employees' do
         content_type :json
-        @db.execute('SELECT * FROM employees').to_json
+        @db.execute('SELECT employees.*, departments.name AS department_label FROM employees OUTER LEFT JOIN departments ON employees.department_id = departments.id').to_json
     end
 
     #new

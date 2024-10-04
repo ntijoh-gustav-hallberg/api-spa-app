@@ -13,6 +13,8 @@ export class EmployeeStore {
     async fetchEmployees() {
         const response = await fetch(this.#baseUrl);
         const json = await response.json();
+
+        console.log(json)
         this.employees = json;
     }
 
