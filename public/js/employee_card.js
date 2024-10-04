@@ -41,11 +41,12 @@ export class EmployeeCard extends HTMLElement {
         <style>
           .employee-card {
              display: flex;
-             background-color: #ccc;
-             border: 1px solid #000;
+             background-color: var(--primary-color);
+             border: 2px solid var(--secondary-color);
              margin: 10px;
              padding: 10px;
              justify-content: space-between;
+             color: var(--text-color)
           }
  
           .employee-card h1,p {
@@ -54,7 +55,7 @@ export class EmployeeCard extends HTMLElement {
           }
  
           .employee-card img {
-             border: 2px solid #000;
+             border: 2px solid var(--secondary-color);
              border-radius: 50%;
           }
  
@@ -65,12 +66,14 @@ export class EmployeeCard extends HTMLElement {
           }
  
           button {
-             border: solid 1px; #000;
-             border-radius: 5px;
+             color: var(--text-color);
+            border: solid 2px var(--secondary-color);
+            border-radius: 5px;
+            padding: 7.5px;
           }
  
           #edit-button {
-             background-color: lime;
+             background-color: var(--cta-color);
           }
  
           #remove-button {
