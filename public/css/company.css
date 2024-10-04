@@ -1,6 +1,15 @@
+:root {
+    --main-bg-color: #000022;
+    --primary-color: #312c4a;
+    --secondary-color: #463f59;
+    --third-color: #685e74;
+    --cta-color: #897c8f;
+}
+
 body {
     padding: 0;
     margin: 0;
+    background-color: var(--main-bg-color);
 }
 
 #employee-container {
@@ -8,6 +17,8 @@ body {
     grid-template-columns: auto auto auto;
     z-index: 1;
 }
+
+/* form */
 
 .toggleble-form {
     display: none;
@@ -18,8 +29,8 @@ body {
     left: 25%;
     position: absolute;
     z-index: 2;
-    background-color: rgba(98, 98, 98, 0.75);
-    border: solid 2px black;
+    background-color: var(--secondary-color);
+    border: solid 2px var(--third-color);
     border-radius: 10px;
     padding: 10px;
 }
@@ -34,11 +45,13 @@ body {
     color: white;
 }
 
+/* nav */
+
 nav {
-    padding: 5px;
+    padding: 5px 0 5px 0;
     width: 100%;
-    background-color: #ccc;
-    border-bottom: solid 1px black;
+    background-color: var(--primary-color);
+    border-bottom: solid 1px var(--secondary-color);
 }
 
 nav ul {
@@ -52,5 +65,16 @@ nav li {
 }
 
 nav input[type="text"] {
-    
+    padding: 10px;
+    width: 250px;
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
+}
+
+nav .new-employee-button {
+    background-color: var(--cta-color);
+    color: white;
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
 }
