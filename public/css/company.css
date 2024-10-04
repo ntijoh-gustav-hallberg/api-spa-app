@@ -6,6 +6,7 @@
     --cta-color: #897c8f;
     --text-color: white;
 }
+
 body {
     padding: 0;
     margin: 0;
@@ -51,12 +52,14 @@ body {
     border: solid 2px var(--secondary-color);
     border-radius: 5px;
 }
+
 .toggleble-form input[type="submit"] {
     background-color: var(--cta-color);
     color: var(--text-color);
     border: solid 2px var(--secondary-color);
     border-radius: 5px;
 }
+
 .toggleble-form .close-button {
     background-color: var(--cta-color);
     padding: 5px;
@@ -65,6 +68,7 @@ body {
     font-size: 20px;
     color: var(--text-color);
 }
+
 /* nav */
 nav {
     padding: 5px 0 5px 0;
