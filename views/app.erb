@@ -27,15 +27,15 @@
         <button class="close-button" onclick="toggleForm('new-employee-form')">&#x2715;</button>
         <form method="post" action="/api/employees/" Content-Type="multipart/form-data">
             <label for="name">Name: </label>
-            <input type="text" placeholder="name" name="name" id="new-form-name" value="" required>
+            <input type="text" placeholder="Name: " name="name" id="new-form-name" value="" required>
             <label for="email">Email: </label>
-            <input type="text" placeholder="email" name="email" id="new-form-email" value="" required>
-            <label for="phone">Phone: </label>
-            <input type="tel" placeholder="phone number" name="phone" id="new-form-phone" value="" required>
-            <label for="departmentID">DepartmentID: </label>
-            <input type="number" placeholder="department ID" name="departmentID" id="new-form-dep-id" value="" required>
+            <input type="text" placeholder="Email: " name="email" id="new-form-email" value="" required>
+            <label for="phone">Phone number: </label>
+            <input type="tel" placeholder="Phone number: " name="phone" id="new-form-phone" value="" required>
+            <label for="departmentID">Department ID: </label>
+            <input type="number" placeholder="Department ID: " name="departmentID" id="new-form-dep-id" value="" required>
             <label for="image">Image: </label>
-            <input type="file" placeholder="image" name="image" id="new-form-img" accept=".jpg" required>
+            <input type="file" name="image" id="new-form-img" accept=".jpg" required>
             <input type="submit" value="save">
         </form>
     </div>
@@ -44,13 +44,13 @@
         <button class="close-button" onclick="toggleForm('edit-employee-form');">&#x2715;</button>
         <form method="post">
             <label for="name">Name: </label>
-            <input type="text" placeholder="name" name="name" id="edit-form-name" value="" required>
+            <input type="text" placeholder="Name: " name="name" id="edit-form-name" value="" required>
             <label for="email">Email: </label>
-            <input type="text" placeholder="email" name="email" id="edit-form-email" value="" required>
-            <label for="phone">Phone: </label>
-            <input type="tel" placeholder="phone number" name="phone" id="edit-form-phone" value="" required>
-            <label for="departmentID">DepartmentID: </label>
-            <input type="number" placeholder="department ID" name="departmentID" id="edit-form-dep-id" value="" required>
+            <input type="text" placeholder="Email: " name="email" id="edit-form-email" value="" required>
+            <label for="phone">Phone number: </label>
+            <input type="tel" placeholder="Phone number: " name="phone" id="edit-form-phone" value="" required>
+            <label for="departmentID">Department ID: </label>
+            <input type="number" placeholder="Department ID: " name="departmentID" id="edit-form-dep-id" value="" required>
             <input type="submit" value="save">
         </form>
     </div>

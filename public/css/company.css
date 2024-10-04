@@ -2,7 +2,7 @@
     --main-bg-color: #000022;
     --primary-color: #312c4a;
     --secondary-color: #463f59;
-    --third-color: #685e74;
+    --tertiary-color: #685e74;
     --cta-color: #897c8f;
     --text-color: white;
 }
@@ -25,13 +25,12 @@ body {
     display: none;
     overflow: hidden;
     width: 50%;
-    height: 35%;
     top: 25%;
     left: 25%;
     position: absolute;
     z-index: 2;
     background-color: var(--secondary-color);
-    border: solid 2px var(--third-color);
+    border: solid 2px var(--tertiary-color);
     border-radius: 10px;
     padding: 10px;
 }
@@ -44,6 +43,22 @@ body {
 
 .toggleble-form label {
     color: var(--text-color);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+.toggleble-form input {
+    padding: 5px;
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
+}
+
+.toggleble-form input[type="submit"] {
+    background-color: var(--cta-color);
+    color: var(--text-color);
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
 }
 
 .toggleble-form .close-button {
