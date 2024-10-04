@@ -56,6 +56,18 @@ class Server < Sinatra::Base
         @db.execute('SELECT * FROM employees WHERE id = ?', params['id']).first.to_json
     end
 
+    #get department labels
+    get '/api/employees/departments' do
+        content_type :json
+        result = @db.execute('SELECT * FROM departments').to_json
+    end
+
+    # get department label by id
+    get 'api/employees/department/:id' do
+        content_type :json
+        @db.execute('SELECT * FROM departments WHERE id = ?', params['id']).first.to_json
+    end
+
     #edit
     get '/api/employees/:id/edit' do
         content_type :json
