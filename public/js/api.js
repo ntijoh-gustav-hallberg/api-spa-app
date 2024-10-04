@@ -24,7 +24,7 @@ class EmployeeCard extends HTMLElement {
             margin: 10px;
             padding: 10px;
             justify-content: space-between;
-            color: white;
+            color: var(--text-color);
          }
 
          .employee-card h1,p {
@@ -44,7 +44,7 @@ class EmployeeCard extends HTMLElement {
          }
 
          button {
-            color: white;
+            color: var(--text-color);
             border: solid 2px var(--secondary-color);
             border-radius: 5px;
             padding: 7.5px;

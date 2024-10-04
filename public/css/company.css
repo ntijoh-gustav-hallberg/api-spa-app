@@ -4,6 +4,7 @@
     --secondary-color: #463f59;
     --third-color: #685e74;
     --cta-color: #897c8f;
+    --text-color: white;
 }
 
 body {
@@ -42,7 +43,16 @@ body {
 }
 
 .toggleble-form label {
-    color: white;
+    color: var(--text-color);
+}
+
+.toggleble-form .close-button {
+    background-color: var(--cta-color);
+    padding: 5px;
+    border: solid 2px var(--secondary-color);
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--text-color);
 }
 
 /* nav */
@@ -73,7 +83,7 @@ nav input[type="text"] {
 
 nav .new-employee-button {
     background-color: var(--cta-color);
-    color: white;
+    color: var(--text-color);
     border: solid 2px var(--secondary-color);
     border-radius: 5px;
     padding: 10px;
