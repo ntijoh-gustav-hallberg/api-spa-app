@@ -1,0 +1,56 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#employee-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    z-index: 1;
+}
+
+.toggleble-form {
+    display: none;
+    overflow: hidden;
+    width: 50%;
+    height: 35%;
+    top: 25%;
+    left: 25%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(98, 98, 98, 0.75);
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.toggleble-form form {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggleble-form label {
+    color: white;
+}
+
+nav {
+    padding: 5px;
+    width: 100%;
+    background-color: #ccc;
+    border-bottom: solid 1px black;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav li {
+    padding-right: 10px;
+}
+
+nav input[type="text"] {
+    
+}

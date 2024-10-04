@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/company.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="search-bar-list">
+                <input type="text" name="search-bar" id="search-bar">
+            </li>
+            <li class="new-employee">
+                <button class="new-employee-button" onclick="toggleForm('new-employee-form')">New employee</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="employee-container">
+
+    </div>
+
+    <div class="toggleble-form" id="new-employee-form">
+        <button class="close-button" onclick="toggleForm('new-employee-form')">X</button>
+        <form method="post" action="/api/employees/" Content-Type="multipart/form-data">
+            <label for="name">Name: </label>
+            <input type="text" placeholder="name" name="name" id="new-form-name" value="" required>
+            <label for="email">Email: </label>
+            <input type="text" placeholder="email" name="email" id="new-form-email" value="" required>
+            <label for="phone">Phone: </label>
+            <input type="tel" placeholder="phone number" name="phone" id="new-form-phone" value="" required>
+            <label for="departmentID">DepartmentID: </label>
+            <input type="number" placeholder="department ID" name="departmentID" id="new-form-dep-id" value="" required>
+            <label for="image">Image: </label>
+            <input type="file" placeholder="image" name="image" id="new-form-img" accept=".jpg" required>
+            <input type="submit" value="save">
+        </form>
+    </div>
+
+    <div class="toggleble-form" id="edit-employee-form">
+        <button class="close-button" onclick="toggleForm('edit-employee-form');">X</button>
+        <form method="post">
+            <label for="name">Name: </label>
+            <input type="text" placeholder="name" name="name" id="edit-form-name" value="" required>
+            <label for="email">Email: </label>
+            <input type="text" placeholder="email" name="email" id="edit-form-email" value="" required>
+            <label for="phone">Phone: </label>
+            <input type="tel" placeholder="phone number" name="phone" id="edit-form-phone" value="" required>
+            <label for="departmentID">DepartmentID: </label>
+            <input type="number" placeholder="department ID" name="departmentID" id="edit-form-dep-id" value="" required>
+            <input type="submit" value="save">
+        </form>
+    </div>
+</body>
+
+<script>
+    window.onload = function() {
+        buildEmployee()
+    }
+</script>
+<script src="/js/api.js"></script>
+</html>

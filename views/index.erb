@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/requests.js"></script>
+    <script src="/js/api.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="timer"></div>
+    <br>
+    <button onclick="block()">Crash!</button>
+    <br>
+    <button onclick="blockingXMLHTTPRequest()">Blocking Request</button>
+    <br>
+    <button onclick="nonBlockingXMLHTTPRequest()">Non Blocking Request</button>
+    <br>
+    <button onclick="fetchWithPromise()">Fetch Promise</button>
+    <br>
+    <button onclick="fetchWithAsyncAwait()">Fetch Async Await</button>
+
+    <br>
+    <button onclick="patch()">Patch</button>
+
+
+    <div class="data">
+
+    </div>
+</body>
+    <script>
+        timer();
+    </script>
+</html>
