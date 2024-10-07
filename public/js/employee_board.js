@@ -1,4 +1,16 @@
 import { EmployeeCard } from "./employee_card.js";
+import { ToggleEditFormEvent } from "./employee_form.js";
+
+export class SearchEvent extends CustomEvent {
+    constructor(search) {
+        super("searchEvent",
+            {
+                bubbles: true,
+                composed: true,
+                detail: {search: search},
+            });
+    }
+}
 
 export class EmployeeBoard extends HTMLElement{
     #store;
@@ -8,12 +20,13 @@ export class EmployeeBoard extends HTMLElement{
         this.#store = store.getInstance();
         this.attachShadow({mode: "open"});
         this.shadowRoot.appendChild(this.#template())
-        this.#init()
+        this.render()
     }
 
     connectedCallback() {
         document.querySelector("main").addEventListener("editEvent", this.#handleEdit.bind(this));
         document.querySelector("main").addEventListener("removeEvent", this.#handleRemove.bind(this));
+        document.querySelector("main").addEventListener("searchEvent", this.#handleSearch.bind(this));
     }
 
     disconnectedCallback() {
@@ -21,7 +34,10 @@ export class EmployeeBoard extends HTMLElement{
         document.querySelector("main").removeEventListener("removeEvent", this.#handleRemove.bind(this));
     }
 
-    async #init() {
+    async render() {
+        if (this.shadowRoot.querySelector("#employee-container").childNodes.length > 0) {
+            this.shadowRoot.querySelector("#employee-container").innerHTML = "";
+        }
         await this.#store.fetchEmployees();
         this.#store.getEmployees().forEach(employee => {
             const card = new EmployeeCard(employee);
@@ -29,12 +45,28 @@ export class EmployeeBoard extends HTMLElement{
         });
     }
 
-    #handleEdit(e) {
-        
+    async #handleEdit(e) {
+        document.querySelector("main").dispatchEvent(new ToggleEditFormEvent(e.detail.employeeCard));
     }
 
-    #handleRemove(e) {
+    async #handleRemove(e) {
+        await this.#store.removeEmployee(e.detail.employeeCard.id)
         e.detail.employeeCard.remove()
+    }
+
+    async #handleSearch(e) {
+        const search = e.detail.search;
+        if (this.shadowRoot.querySelector("#employee-container").childNodes.length > 0) {
+            this.shadowRoot.querySelector("#employee-container").innerHTML = "";
+        }
+        await this.#store.fetchEmployees();
+        this.#store.getEmployees().forEach(employee => {
+            const isMatch = employee.name.toLowerCase().includes(search.toLowerCase());
+            if (isMatch) {
+                const card = new EmployeeCard(employee);
+                this.shadowRoot.querySelector("#employee-container").appendChild(card);
+            }
+        });
     }
 
     #template() {
@@ -42,6 +74,7 @@ export class EmployeeBoard extends HTMLElement{
         template.innerHTML = `
         <style>
             #employee-container {
+                width: 100%;
                 display: grid;
                 grid-template-columns: auto auto auto;
                 z-index: 1;

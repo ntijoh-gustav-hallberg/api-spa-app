@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/company.css">
+    <link rel="stylesheet" href="/css/company.css">
     <script type="module" src="/js/api.js"></script>
+    <script type="module" src="/js/employee_form.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
                 <input type="text" name="search-bar" id="search-bar" placeholder="Search">
             </li>
             <li class="new-employee">
-                <button class="new-employee-button" onclick="toggleForm('new-employee-form')">New employee</button>
+                <button class="new-employee-button" onclick="toggleNewForm()">New employee</button>
             </li>
         </ul>
     </nav>
@@ -23,38 +24,5 @@
     <main>
         
     </main>
-
-    <div class="toggleble-form" id="new-employee-form">
-        <button class="close-button" onclick="toggleForm('new-employee-form')">&#x2715;</button>
-        <form method="post" action="/api/employees/" Content-Type="multipart/form-data">
-            <label for="name">Name: </label>
-            <input type="text" placeholder="Name: " name="name" id="new-form-name" value="" required>
-            <label for="email">Email: </label>
-            <input type="text" placeholder="Email: " name="email" id="new-form-email" value="" required>
-            <label for="phone">Phone number: </label>
-            <input type="tel" placeholder="Phone number: " name="phone" id="new-form-phone" value="" required>
-            <label for="departmentID">Department ID: </label>
-            <input type="number" placeholder="Department ID: " name="departmentID" id="new-form-dep-id" value="" required>
-            <label for="image">Image: </label>
-            <input type="file" name="image" id="new-form-img" accept=".jpg" required>
-            <input type="submit" value="save">
-        </form>
-    </div>
-
-    <div class="toggleble-form" id="edit-employee-form">
-        <button class="close-button" onclick="toggleForm('edit-employee-form');">&#x2715;</button>
-        <form method="post">
-            <label for="name">Name: </label>
-            <input type="text" placeholder="Name: " name="name" id="edit-form-name" value="" required>
-            <label for="email">Email: </label>
-            <input type="text" placeholder="Email: " name="email" id="edit-form-email" value="" required>
-            <label for="phone">Phone number: </label>
-            <input type="tel" placeholder="Phone number: " name="phone" id="edit-form-phone" value="" required>
-            <label for="departmentID">Department ID: </label>
-            <input type="number" placeholder="Department ID: " name="departmentID" id="edit-form-dep-id" value="" required>
-            <input type="submit" value="save">
-        </form>
-    </div>
 </body>
-
 </html>

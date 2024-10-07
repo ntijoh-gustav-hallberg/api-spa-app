@@ -1,3 +1,5 @@
+import { ToggleEditFormEvent } from "./employee_form.js";
+
 export class EmployeeStore {
     static instance = null
 
@@ -11,6 +13,9 @@ export class EmployeeStore {
     }
 
     async fetchEmployees() {
+        if(this.employees) {
+            this.employees == null
+        }
         const response = await fetch(this.#baseUrl);
         const json = await response.json();
         this.employees = json;
@@ -25,7 +30,10 @@ export class EmployeeStore {
         if(!response.ok) {
             throw new Error("Response failed, status code: " + response.status);
         }
+    }
 
+    toggleEditForm() {
+        document.querySelector("main").dispatchEvent(new ToggleEditFormEvent());
     }
 
     getEmployeeSearch(search) {

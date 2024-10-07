@@ -13,60 +13,8 @@ body {
     background-color: var(--main-bg-color);
 }
 
-#employee-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    z-index: 1;
-}
-
-/* form */
-.toggleble-form {
-    display: none;
-    overflow: hidden;
-    width: 50%;
-    top: 25%;
-    left: 25%;
-    position: absolute;
-    z-index: 2;
-    background-color: var(--secondary-color);
-    border: solid 2px var(--tertiary-color);
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.toggleble-form form {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.toggleble-form label {
-    color: var(--text-color);
-    padding-top: 10px;
-    padding-bottom: 5px;
-    font-size: 16px;
-}
-
-.toggleble-form input {
-    padding: 5px;
-    border: solid 2px var(--secondary-color);
-    border-radius: 5px;
-}
-
-.toggleble-form input[type="submit"] {
-    background-color: var(--cta-color);
-    color: var(--text-color);
-    border: solid 2px var(--secondary-color);
-    border-radius: 5px;
-}
-
-.toggleble-form .close-button {
-    background-color: var(--cta-color);
-    padding: 5px;
-    border: solid 2px var(--secondary-color);
-    border-radius: 5px;
-    font-size: 20px;
-    color: var(--text-color);
+main {
+    width: 100%;
 }
 
 /* nav */
